@@ -7,6 +7,9 @@ namespace classReservations
 	{
 
 		string connectionString;
+		SqlConnection connection;
+		SqlCommand command;
+		SqlDataAdapter adapter;
 
 		/// <summary>
 		/// Default constructor, uses localhost and integrated authentication
@@ -14,6 +17,7 @@ namespace classReservations
 		public Reservation()
 		{
 			this.connectionString = "Data Source=(local);Initial Catalog=prenotazioni;Integrated Security=True";
+			this.ConnectToDB();
 		}
 
 		/// <summary>
@@ -24,6 +28,7 @@ namespace classReservations
 		public Reservation(string server, string database)
 		{
 			this.connectionString = $"Data Source={server};Initial Catalog={database};Integrated Security=True";
+			this.ConnectToDB();
 		}
 
 		/// <summary>
@@ -36,6 +41,11 @@ namespace classReservations
 		public Reservation(string server, string database, string username, string password)
 		{
 			this.connectionString = $"user id={username};data source='{server}';persist security info=True;initial catalog={database};password={password};MultipleActiveResultSets=true";
+			this.ConnectToDB();
+		}
+
+		private void ConnectToDB(){
+			this.connection = new SqlConnection(this.connectionString);
 		}
 
 		/// <summary>
