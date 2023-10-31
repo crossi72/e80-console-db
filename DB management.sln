@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB management", "DB management\DB management.csproj", "{2DAEA806-BFCD-4D00-AEB7-9641A5FDAD59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "classReservations", "classReservations\classReservations.csproj", "{B0B006EF-1277-415A-B165-A9CD813ABC80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2DAEA806-BFCD-4D00-AEB7-9641A5FDAD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DAEA806-BFCD-4D00-AEB7-9641A5FDAD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DAEA806-BFCD-4D00-AEB7-9641A5FDAD59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B006EF-1277-415A-B165-A9CD813ABC80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B006EF-1277-415A-B165-A9CD813ABC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B006EF-1277-415A-B165-A9CD813ABC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B006EF-1277-415A-B165-A9CD813ABC80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
