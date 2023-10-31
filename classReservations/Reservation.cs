@@ -43,7 +43,8 @@ namespace classReservations
 			this.ConnectToDB();
 		}
 
-		private void ConnectToDB(){
+		private void ConnectToDB()
+		{
 			this.connection = new SqlConnection(this.connectionString);
 
 			this.connection.Open();
@@ -55,6 +56,15 @@ namespace classReservations
 		/// <returns></returns>
 		public DataTable Customers()
 		{
+			return this.Customers("", "");
+		}
+
+		/// <summary>
+		/// Loads all customers data
+		/// </summary>
+		/// <returns></returns>
+		public DataTable Customers(string firstName, string secondName)
+		{
 			string queryString;
 			DataTable result;
 			SqlCommand command;
@@ -62,6 +72,10 @@ namespace classReservations
 
 			//loads data from database
 			queryString = "SELECT * FROM clienti";
+
+			if ((firstName != "") && (secondName != "")){
+				queryString += $"\nWHERE cognome = '{secondName.Replace("'", "''")}' AND nome = '{firstName.Replace("'", "''")}'";
+			}
 
 			command = new SqlCommand(queryString, this.connection);
 			//connection.Open();
@@ -72,7 +86,7 @@ namespace classReservations
 			adapter.Fill(dataSet, "Clienti");
 
 			result = dataSet.Tables["Clienti"];
-		
+
 			return result;
 		}
 
