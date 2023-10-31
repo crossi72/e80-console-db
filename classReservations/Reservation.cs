@@ -73,7 +73,8 @@ namespace classReservations
 			//loads data from database
 			queryString = "SELECT * FROM clienti";
 
-			if ((firstName != "") && (secondName != "")){
+			if ((firstName != "") && (secondName != ""))
+			{
 				queryString += $"\nWHERE cognome = '{secondName.Replace("'", "''")}' AND nome = '{firstName.Replace("'", "''")}'";
 			}
 
@@ -90,5 +91,74 @@ namespace classReservations
 			return result;
 		}
 
+		/// <summary>
+		/// Returns all reservations
+		/// </summary>
+		/// <returns>DataTable containing all reservations</returns>
+		public DataTable Reservations()
+		{
+			return this.Reservations(0, "", "");
+		}
+
+		/// <summary>
+		/// Returns a reservation
+		/// </summary>
+		/// <param name="reservation_id">ID of the reservation to load</param>
+		/// <returns>DataTable containing the reservation</returns>
+		public DataTable Reservations(int reservation_id)
+		{
+			return this.Reservations(reservation_id, "", "");
+		}
+
+		/// <summary>
+		/// Returns all reservations for a customer
+		/// </summary>
+		/// <param name="customerFirstName">First name of the customer</param>
+		/// <param name="customerSecondName">Second name of the customer</param>
+		/// <returns></returns>
+		public DataTable Reservations(string customerFirstName, string customerSecondName)
+		{
+			return this.Reservations(0, customerFirstName, customerSecondName);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="reservation_id">ID of the reservation to load</param>
+		/// <param name="customerFirstName">First name of the customer</param>
+		/// <param name="customerSecondName">Second name of the customer</param>
+		/// <returns></returns>
+		private DataTable Reservations(int reservation_id, string customerFirstName, string customerSecondName)
+		{
+			DataTable result;
+			string queryString;
+			SqlCommand command;
+			DataSet dataSet;
+
+			//loads data from database
+			queryString = "SELECT prenotazioni.* FROM prenotazioni";
+
+			if (reservation_id != 0) {
+				//reservation id is not zero: find the reservation using the ID
+				queryString += $"\nWHERE id_prenotazione = {reservation_id}";
+			}
+
+			if ((customerFirstName != "") && (customerSecondName != ""))
+			{
+				queryString += "\nINNER JOIN clienti ON id_cliente = cliente";
+				queryString += $"\nWHERE cognome = '{customerSecondName.Replace("'", "''")}' AND nome = '{customerFirstName.Replace("'", "''")}'";
+			}
+
+			command = new SqlCommand(queryString, this.connection);
+			//connection.Open();
+
+			adapter = new SqlDataAdapter(queryString, this.connection);
+
+			dataSet = new DataSet();
+			adapter.Fill(dataSet, "Clienti");
+
+			result = dataSet.Tables["Clienti"];
+			return result;
+		}
 	}
 }
