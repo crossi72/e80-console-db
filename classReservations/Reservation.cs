@@ -8,7 +8,6 @@ namespace classReservations
 
 		string connectionString;
 		SqlConnection connection;
-		SqlCommand command;
 		SqlDataAdapter adapter;
 
 		/// <summary>
@@ -46,6 +45,8 @@ namespace classReservations
 
 		private void ConnectToDB(){
 			this.connection = new SqlConnection(this.connectionString);
+
+			this.connection.Open();
 		}
 
 		/// <summary>
@@ -54,11 +55,24 @@ namespace classReservations
 		/// <returns></returns>
 		public DataTable Customers()
 		{
+			string queryString;
 			DataTable result;
-
-			result= new DataTable();
+			SqlCommand command;
+			DataSet dataSet;
 
 			//loads data from database
+			queryString = "SELECT * FROM clienti";
+
+			command = new SqlCommand(queryString, this.connection);
+			//connection.Open();
+
+			adapter = new SqlDataAdapter(queryString, this.connection);
+
+			dataSet = new DataSet();
+			adapter.Fill(dataSet, "Clienti");
+
+			result = dataSet.Tables["Clienti"];
+		
 			return result;
 		}
 

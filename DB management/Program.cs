@@ -8,8 +8,6 @@ DataTable dataTable;
 DataSet dataSet;
 
 ////create a DB connection
-//using (connection = new SqlConnection(connectionString))
-//{
 //	//ask for first and second name
 //	Console.Write("Nome: ");
 //	customerFirstName = Console.ReadLine();
@@ -36,4 +34,3 @@ DataSet dataSet;
 //	{
 //		Console.WriteLine($"{row["arrivo"]}\t{row["partenza"]}\t{row["importo"]}\t{row["tipo_struttura"]}");
 //	}
-//}
