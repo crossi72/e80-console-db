@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCitta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCitta.Designer.cs">
+      <DependentUpon>frmCitta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClienti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCitta.resx">
+      <DependentUpon>frmCitta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClienti.resx">
       <DependentUpon>frmClienti.cs</DependentUpon>
     </EmbeddedResource>

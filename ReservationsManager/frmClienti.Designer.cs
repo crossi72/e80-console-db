@@ -233,7 +233,7 @@
 			this.nomeTextBox.Location = new System.Drawing.Point(210, 103);
 			this.nomeTextBox.Name = "nomeTextBox";
 			this.nomeTextBox.Size = new System.Drawing.Size(365, 31);
-			this.nomeTextBox.TabIndex = 2;
+			this.nomeTextBox.TabIndex = 0;
 			// 
 			// cognomeLabel
 			// 
@@ -250,7 +250,7 @@
 			this.cognomeTextBox.Location = new System.Drawing.Point(716, 103);
 			this.cognomeTextBox.Name = "cognomeTextBox";
 			this.cognomeTextBox.Size = new System.Drawing.Size(365, 31);
-			this.cognomeTextBox.TabIndex = 4;
+			this.cognomeTextBox.TabIndex = 1;
 			// 
 			// dataNascitaLabel
 			// 
@@ -267,7 +267,7 @@
 			this.dataNascitaDateTimePicker.Location = new System.Drawing.Point(204, 168);
 			this.dataNascitaDateTimePicker.Name = "dataNascitaDateTimePicker";
 			this.dataNascitaDateTimePicker.Size = new System.Drawing.Size(371, 31);
-			this.dataNascitaDateTimePicker.TabIndex = 6;
+			this.dataNascitaDateTimePicker.TabIndex = 2;
 			// 
 			// cittaLabel1
 			// 
@@ -288,7 +288,7 @@
 			this.cittaComboBox.Location = new System.Drawing.Point(716, 165);
 			this.cittaComboBox.Name = "cittaComboBox";
 			this.cittaComboBox.Size = new System.Drawing.Size(365, 33);
-			this.cittaComboBox.TabIndex = 10;
+			this.cittaComboBox.TabIndex = 3;
 			this.cittaComboBox.ValueMember = "ID_citta";
 			// 
 			// cittaBindingSource
