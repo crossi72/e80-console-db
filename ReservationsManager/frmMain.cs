@@ -44,5 +44,23 @@ namespace ReservationsManager
 		}
 
 		#endregion
+
+		private void regioniToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			//create form
+			frmRegioni form = new frmRegioni();
+
+			//show form
+			form.ShowDialog();
+		}
+
+		private void cittàToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			//create form
+			frmCitta form = new frmCitta();
+
+			//show form
+			form.ShowDialog();
+		}
 	}
 }

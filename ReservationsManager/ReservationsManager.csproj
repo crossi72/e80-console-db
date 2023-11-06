@@ -70,6 +70,12 @@
     <Compile Include="frmPrenotazioni.Designer.cs">
       <DependentUpon>frmPrenotazioni.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegioni.Designer.cs">
+      <DependentUpon>frmRegioni.cs</DependentUpon>
+    </Compile>
     <Compile Include="prenotazioniDataSet.cs">
       <DependentUpon>prenotazioniDataSet.xsd</DependentUpon>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrenotazioni.resx">
       <DependentUpon>frmPrenotazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegioni.resx">
+      <DependentUpon>frmRegioni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

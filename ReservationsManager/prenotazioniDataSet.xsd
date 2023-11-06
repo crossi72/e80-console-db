@@ -346,6 +346,24 @@ ORDER BY nome, cognome
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="areeGeograficheComboTableAdapter" GeneratorDataComponentClassName="areeGeograficheComboTableAdapter" Name="areeGeograficheCombo" UserDataComponentName="areeGeograficheComboTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="prenotazioniConnectionString (Settings)" DbObjectName="prenotazioni.dbo.regioni" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT area_geografica
+FROM regioni
+ORDER BY area_geografica</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="area_geografica" DataSetColumn="area_geografica" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -455,14 +473,27 @@ ORDER BY nome, cognome
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="clientiCombo" msprop:Generator_RowEvHandlerName="clientiComboRowChangeEventHandler" msprop:Generator_RowDeletedName="clientiComboRowDeleted" msprop:Generator_RowDeletingName="clientiComboRowDeleting" msprop:Generator_RowEvArgName="clientiComboRowChangeEvent" msprop:Generator_TablePropName="clientiCombo" msprop:Generator_RowChangedName="clientiComboRowChanged" msprop:Generator_RowChangingName="clientiComboRowChanging" msprop:Generator_TableClassName="clientiComboDataTable" msprop:Generator_RowClassName="clientiComboRow" msprop:Generator_TableVarName="tableclientiCombo" msprop:Generator_UserTableName="clientiCombo">
+        <xs:element name="clientiCombo" msprop:Generator_RowClassName="clientiComboRow" msprop:Generator_RowEvHandlerName="clientiComboRowChangeEventHandler" msprop:Generator_RowDeletedName="clientiComboRowDeleted" msprop:Generator_RowDeletingName="clientiComboRowDeleting" msprop:Generator_RowEvArgName="clientiComboRowChangeEvent" msprop:Generator_TablePropName="clientiCombo" msprop:Generator_RowChangedName="clientiComboRowChanged" msprop:Generator_UserTableName="clientiCombo" msprop:Generator_RowChangingName="clientiComboRowChanging" msprop:Generator_TableClassName="clientiComboDataTable" msprop:Generator_TableVarName="tableclientiCombo">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_cliente" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id_cliente" msprop:Generator_ColumnPropNameInTable="id_clienteColumn" msprop:Generator_ColumnVarNameInTable="columnid_cliente" msprop:Generator_UserColumnName="id_cliente" type="xs:int" />
-              <xs:element name="nome" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_UserColumnName="nome" minOccurs="0">
+              <xs:element name="id_cliente" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id_cliente" msprop:Generator_ColumnPropNameInTable="id_clienteColumn" msprop:Generator_ColumnPropNameInRow="id_cliente" msprop:Generator_ColumnVarNameInTable="columnid_cliente" type="xs:int" />
+              <xs:element name="nome" msdata:ReadOnly="true" msprop:Generator_UserColumnName="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnVarNameInTable="columnnome" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="areeGeograficheCombo" msprop:Generator_RowEvHandlerName="areeGeograficheComboRowChangeEventHandler" msprop:Generator_RowDeletedName="areeGeograficheComboRowDeleted" msprop:Generator_RowDeletingName="areeGeograficheComboRowDeleting" msprop:Generator_RowEvArgName="areeGeograficheComboRowChangeEvent" msprop:Generator_TablePropName="areeGeograficheCombo" msprop:Generator_RowChangedName="areeGeograficheComboRowChanged" msprop:Generator_RowChangingName="areeGeograficheComboRowChanging" msprop:Generator_TableClassName="areeGeograficheComboDataTable" msprop:Generator_RowClassName="areeGeograficheComboRow" msprop:Generator_TableVarName="tableareeGeograficheCombo" msprop:Generator_UserTableName="areeGeograficheCombo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="area_geografica" msprop:Generator_ColumnPropNameInRow="area_geografica" msprop:Generator_ColumnPropNameInTable="area_geograficaColumn" msprop:Generator_ColumnVarNameInTable="columnarea_geografica" msprop:Generator_UserColumnName="area_geografica" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -494,10 +525,10 @@ ORDER BY nome, cognome
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_citta_regioni" msdata:parent="regioni" msdata:child="citta" msdata:parentkey="ID_regione" msdata:childkey="regione" msprop:Generator_UserParentTable="regioni" msprop:Generator_UserChildTable="citta" msprop:Generator_RelationVarName="relationFK_citta_regioni" msprop:Generator_ChildPropName="GetcittaRows" msprop:Generator_UserRelationName="FK_citta_regioni" msprop:Generator_ParentPropName="regioniRow" />
-      <msdata:Relationship name="FK_clienti_citta" msdata:parent="citta" msdata:child="clienti" msdata:parentkey="ID_citta" msdata:childkey="citta" msprop:Generator_UserParentTable="citta" msprop:Generator_UserChildTable="clienti" msprop:Generator_RelationVarName="relationFK_clienti_citta" msprop:Generator_ChildPropName="GetclientiRows" msprop:Generator_ParentPropName="cittaRow" msprop:Generator_UserRelationName="FK_clienti_citta" />
-      <msdata:Relationship name="FK_prenotazioni_clienti" msdata:parent="clienti" msdata:child="prenotazioni" msdata:parentkey="ID_cliente" msdata:childkey="cliente" msprop:Generator_UserParentTable="clienti" msprop:Generator_UserChildTable="prenotazioni" msprop:Generator_RelationVarName="relationFK_prenotazioni_clienti" msprop:Generator_ChildPropName="GetprenotazioniRows" msprop:Generator_ParentPropName="clientiRow" msprop:Generator_UserRelationName="FK_prenotazioni_clienti" />
-      <msdata:Relationship name="FK_prenotazioni_clienti1" msdata:parent="clientiCombo" msdata:child="prenotazioni" msdata:parentkey="id_cliente" msdata:childkey="cliente" msprop:Generator_UserParentTable="clientiCombo" msprop:Generator_UserChildTable="prenotazioni" msprop:Generator_RelationVarName="relationFK_prenotazioni_clienti1" msprop:Generator_UserRelationName="FK_prenotazioni_clienti1" msprop:Generator_ChildPropName="GetprenotazioniRows" msprop:Generator_ParentPropName="clientiComboRow" />
+      <msdata:Relationship name="FK_citta_regioni" msdata:parent="regioni" msdata:child="citta" msdata:parentkey="ID_regione" msdata:childkey="regione" msprop:Generator_UserParentTable="regioni" msprop:Generator_UserChildTable="citta" msprop:Generator_RelationVarName="relationFK_citta_regioni" msprop:Generator_ChildPropName="GetcittaRows" msprop:Generator_ParentPropName="regioniRow" msprop:Generator_UserRelationName="FK_citta_regioni" />
+      <msdata:Relationship name="FK_clienti_citta" msdata:parent="citta" msdata:child="clienti" msdata:parentkey="ID_citta" msdata:childkey="citta" msprop:Generator_UserParentTable="citta" msprop:Generator_UserChildTable="clienti" msprop:Generator_RelationVarName="relationFK_clienti_citta" msprop:Generator_ChildPropName="GetclientiRows" msprop:Generator_UserRelationName="FK_clienti_citta" msprop:Generator_ParentPropName="cittaRow" />
+      <msdata:Relationship name="FK_prenotazioni_clienti" msdata:parent="clienti" msdata:child="prenotazioni" msdata:parentkey="ID_cliente" msdata:childkey="cliente" msprop:Generator_UserParentTable="clienti" msprop:Generator_UserChildTable="prenotazioni" msprop:Generator_RelationVarName="relationFK_prenotazioni_clienti" msprop:Generator_ChildPropName="GetprenotazioniRows" msprop:Generator_UserRelationName="FK_prenotazioni_clienti" msprop:Generator_ParentPropName="clientiRow" />
+      <msdata:Relationship name="FK_prenotazioni_clienti1" msdata:parent="clientiCombo" msdata:child="prenotazioni" msdata:parentkey="id_cliente" msdata:childkey="cliente" msprop:Generator_UserParentTable="clientiCombo" msprop:Generator_UserChildTable="prenotazioni" msprop:Generator_RelationVarName="relationFK_prenotazioni_clienti1" msprop:Generator_ChildPropName="GetprenotazioniRows" msprop:Generator_ParentPropName="clientiComboRow" msprop:Generator_UserRelationName="FK_prenotazioni_clienti1" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

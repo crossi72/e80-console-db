@@ -36,6 +36,8 @@
 			this.clientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cittàToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.regioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -65,7 +67,9 @@
 			this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prenotazioniToolStripMenuItem,
-            this.clientiToolStripMenuItem});
+            this.clientiToolStripMenuItem,
+            this.cittàToolStripMenuItem,
+            this.regioniToolStripMenuItem});
 			this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
 			this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -104,6 +108,20 @@
 			this.esciToolStripMenuItem.Text = "&Esci";
 			this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
 			// 
+			// cittàToolStripMenuItem
+			// 
+			this.cittàToolStripMenuItem.Name = "cittàToolStripMenuItem";
+			this.cittàToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+			this.cittàToolStripMenuItem.Text = "C&ittà";
+			this.cittàToolStripMenuItem.Click += new System.EventHandler(this.cittàToolStripMenuItem_Click);
+			// 
+			// regioniToolStripMenuItem
+			// 
+			this.regioniToolStripMenuItem.Name = "regioniToolStripMenuItem";
+			this.regioniToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+			this.regioniToolStripMenuItem.Text = "Regioni";
+			this.regioniToolStripMenuItem.Click += new System.EventHandler(this.regioniToolStripMenuItem_Click);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -130,5 +148,7 @@
 		private System.Windows.Forms.ToolStripMenuItem clientiToolStripMenuItem;
 		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
 		private System.Windows.Forms.ToolStripMenuItem esciToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem cittàToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem regioniToolStripMenuItem;
 	}
 }
