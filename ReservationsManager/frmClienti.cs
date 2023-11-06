@@ -27,6 +27,8 @@ namespace ReservationsManager
 
 		private void frmClienti_Load(object sender, EventArgs e)
 		{
+            // TODO: This line of code loads data into the 'prenotazioniDataSet.prenotazioni' table. You can move, or remove it, as needed.
+            this.prenotazioniTableAdapter.Fill(this.prenotazioniDataSet.prenotazioni);
             // TODO: This line of code loads data into the 'prenotazioniDataSet.citta' table. You can move, or remove it, as needed.
             this.cittaTableAdapter.Fill(this.prenotazioniDataSet.citta);
             // TODO: This line of code loads data into the 'prenotazioniDataSet.clienti' table. You can move, or remove it, as needed.

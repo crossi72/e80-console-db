@@ -57,6 +57,17 @@
 			this.cittaComboBox = new System.Windows.Forms.ComboBox();
 			this.cittaBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.cittaTableAdapter = new ReservationsManager.prenotazioniDataSetTableAdapters.cittaTableAdapter();
+			this.prenotazioniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.prenotazioniTableAdapter = new ReservationsManager.prenotazioniDataSetTableAdapters.prenotazioniTableAdapter();
+			this.prenotazioniDataGridView = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			nomeLabel = new System.Windows.Forms.Label();
 			cognomeLabel = new System.Windows.Forms.Label();
 			dataNascitaLabel = new System.Windows.Forms.Label();
@@ -66,6 +77,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.clientiBindingNavigator)).BeginInit();
 			this.clientiBindingNavigator.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.cittaBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.prenotazioniBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.prenotazioniDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// prenotazioniDataSet
@@ -88,7 +101,7 @@
 			this.tableAdapterManager.cittaTableAdapter = this.cittaTableAdapter;
 			this.tableAdapterManager.clienti_backupTableAdapter = null;
 			this.tableAdapterManager.clientiTableAdapter = this.clientiTableAdapter;
-			this.tableAdapterManager.prenotazioniTableAdapter = null;
+			this.tableAdapterManager.prenotazioniTableAdapter = this.prenotazioniTableAdapter;
 			this.tableAdapterManager.regioniTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = ReservationsManager.prenotazioniDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
 			// 
@@ -221,7 +234,7 @@
 			// nomeLabel
 			// 
 			nomeLabel.AutoSize = true;
-			nomeLabel.Location = new System.Drawing.Point(133, 106);
+			nomeLabel.Location = new System.Drawing.Point(60, 60);
 			nomeLabel.Name = "nomeLabel";
 			nomeLabel.Size = new System.Drawing.Size(71, 25);
 			nomeLabel.TabIndex = 1;
@@ -230,7 +243,7 @@
 			// nomeTextBox
 			// 
 			this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientiBindingSource, "nome", true));
-			this.nomeTextBox.Location = new System.Drawing.Point(210, 103);
+			this.nomeTextBox.Location = new System.Drawing.Point(65, 103);
 			this.nomeTextBox.Name = "nomeTextBox";
 			this.nomeTextBox.Size = new System.Drawing.Size(365, 31);
 			this.nomeTextBox.TabIndex = 0;
@@ -238,7 +251,7 @@
 			// cognomeLabel
 			// 
 			cognomeLabel.AutoSize = true;
-			cognomeLabel.Location = new System.Drawing.Point(604, 106);
+			cognomeLabel.Location = new System.Drawing.Point(566, 60);
 			cognomeLabel.Name = "cognomeLabel";
 			cognomeLabel.Size = new System.Drawing.Size(106, 25);
 			cognomeLabel.TabIndex = 3;
@@ -247,7 +260,7 @@
 			// cognomeTextBox
 			// 
 			this.cognomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientiBindingSource, "cognome", true));
-			this.cognomeTextBox.Location = new System.Drawing.Point(716, 103);
+			this.cognomeTextBox.Location = new System.Drawing.Point(571, 103);
 			this.cognomeTextBox.Name = "cognomeTextBox";
 			this.cognomeTextBox.Size = new System.Drawing.Size(365, 31);
 			this.cognomeTextBox.TabIndex = 1;
@@ -255,7 +268,7 @@
 			// dataNascitaLabel
 			// 
 			dataNascitaLabel.AutoSize = true;
-			dataNascitaLabel.Location = new System.Drawing.Point(60, 172);
+			dataNascitaLabel.Location = new System.Drawing.Point(60, 168);
 			dataNascitaLabel.Name = "dataNascitaLabel";
 			dataNascitaLabel.Size = new System.Drawing.Size(138, 25);
 			dataNascitaLabel.TabIndex = 5;
@@ -264,7 +277,7 @@
 			// dataNascitaDateTimePicker
 			// 
 			this.dataNascitaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.clientiBindingSource, "dataNascita", true));
-			this.dataNascitaDateTimePicker.Location = new System.Drawing.Point(204, 168);
+			this.dataNascitaDateTimePicker.Location = new System.Drawing.Point(65, 196);
 			this.dataNascitaDateTimePicker.Name = "dataNascitaDateTimePicker";
 			this.dataNascitaDateTimePicker.Size = new System.Drawing.Size(371, 31);
 			this.dataNascitaDateTimePicker.TabIndex = 2;
@@ -272,7 +285,7 @@
 			// cittaLabel1
 			// 
 			cittaLabel1.AutoSize = true;
-			cittaLabel1.Location = new System.Drawing.Point(652, 168);
+			cittaLabel1.Location = new System.Drawing.Point(576, 153);
 			cittaLabel1.Name = "cittaLabel1";
 			cittaLabel1.Size = new System.Drawing.Size(58, 25);
 			cittaLabel1.TabIndex = 9;
@@ -285,7 +298,7 @@
 			this.cittaComboBox.DataSource = this.cittaBindingSource;
 			this.cittaComboBox.DisplayMember = "citta";
 			this.cittaComboBox.FormattingEnabled = true;
-			this.cittaComboBox.Location = new System.Drawing.Point(716, 165);
+			this.cittaComboBox.Location = new System.Drawing.Point(571, 194);
 			this.cittaComboBox.Name = "cittaComboBox";
 			this.cittaComboBox.Size = new System.Drawing.Size(365, 33);
 			this.cittaComboBox.TabIndex = 3;
@@ -300,11 +313,105 @@
 			// 
 			this.cittaTableAdapter.ClearBeforeFill = true;
 			// 
+			// prenotazioniBindingSource
+			// 
+			this.prenotazioniBindingSource.DataMember = "FK_prenotazioni_clienti";
+			this.prenotazioniBindingSource.DataSource = this.clientiBindingSource;
+			// 
+			// prenotazioniTableAdapter
+			// 
+			this.prenotazioniTableAdapter.ClearBeforeFill = true;
+			// 
+			// prenotazioniDataGridView
+			// 
+			this.prenotazioniDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.prenotazioniDataGridView.AutoGenerateColumns = false;
+			this.prenotazioniDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.prenotazioniDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+			this.prenotazioniDataGridView.DataSource = this.prenotazioniBindingSource;
+			this.prenotazioniDataGridView.Location = new System.Drawing.Point(65, 255);
+			this.prenotazioniDataGridView.Name = "prenotazioniDataGridView";
+			this.prenotazioniDataGridView.RowHeadersWidth = 82;
+			this.prenotazioniDataGridView.RowTemplate.Height = 33;
+			this.prenotazioniDataGridView.Size = new System.Drawing.Size(1081, 196);
+			this.prenotazioniDataGridView.TabIndex = 9;
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this.dataGridViewTextBoxColumn3.DataPropertyName = "arrivo";
+			this.dataGridViewTextBoxColumn3.HeaderText = "arrivo";
+			this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
+			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this.dataGridViewTextBoxColumn4.DataPropertyName = "partenza";
+			this.dataGridViewTextBoxColumn4.HeaderText = "partenza";
+			this.dataGridViewTextBoxColumn4.MinimumWidth = 10;
+			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this.dataGridViewTextBoxColumn2.DataPropertyName = "camera";
+			this.dataGridViewTextBoxColumn2.HeaderText = "camera";
+			this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			this.dataGridViewTextBoxColumn2.Width = 40;
+			// 
+			// dataGridViewTextBoxColumn5
+			// 
+			this.dataGridViewTextBoxColumn5.DataPropertyName = "importo";
+			this.dataGridViewTextBoxColumn5.HeaderText = "importo";
+			this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
+			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this.dataGridViewTextBoxColumn6.DataPropertyName = "caparra";
+			this.dataGridViewTextBoxColumn6.HeaderText = "caparra";
+			this.dataGridViewTextBoxColumn6.MinimumWidth = 10;
+			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			// 
+			// dataGridViewTextBoxColumn7
+			// 
+			this.dataGridViewTextBoxColumn7.DataPropertyName = "tipo_struttura";
+			this.dataGridViewTextBoxColumn7.HeaderText = "tipo_struttura";
+			this.dataGridViewTextBoxColumn7.MinimumWidth = 10;
+			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+			this.dataGridViewTextBoxColumn7.Width = 200;
+			// 
+			// dataGridViewTextBoxColumn8
+			// 
+			this.dataGridViewTextBoxColumn8.DataPropertyName = "giorni_permanenza";
+			this.dataGridViewTextBoxColumn8.HeaderText = "giorni_permanenza";
+			this.dataGridViewTextBoxColumn8.MinimumWidth = 10;
+			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+			this.dataGridViewTextBoxColumn8.Width = 200;
+			// 
+			// dataGridViewTextBoxColumn9
+			// 
+			this.dataGridViewTextBoxColumn9.DataPropertyName = "costo_giornaliero";
+			this.dataGridViewTextBoxColumn9.HeaderText = "costo_giornaliero";
+			this.dataGridViewTextBoxColumn9.MinimumWidth = 10;
+			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+			this.dataGridViewTextBoxColumn9.Width = 200;
+			// 
 			// frmClienti
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1198, 450);
+			this.ClientSize = new System.Drawing.Size(1198, 502);
+			this.Controls.Add(this.prenotazioniDataGridView);
 			this.Controls.Add(cittaLabel1);
 			this.Controls.Add(this.cittaComboBox);
 			this.Controls.Add(dataNascitaLabel);
@@ -323,6 +430,8 @@
 			this.clientiBindingNavigator.ResumeLayout(false);
 			this.clientiBindingNavigator.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.cittaBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.prenotazioniBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.prenotazioniDataGridView)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -353,6 +462,17 @@
 		private prenotazioniDataSetTableAdapters.cittaTableAdapter cittaTableAdapter;
 		private System.Windows.Forms.ComboBox cittaComboBox;
 		private System.Windows.Forms.BindingSource cittaBindingSource;
+		private prenotazioniDataSetTableAdapters.prenotazioniTableAdapter prenotazioniTableAdapter;
+		private System.Windows.Forms.BindingSource prenotazioniBindingSource;
+		private System.Windows.Forms.DataGridView prenotazioniDataGridView;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
 	}
 }
 
