@@ -127,7 +127,7 @@
 			// caparraLabel
 			// 
 			caparraLabel.AutoSize = true;
-			caparraLabel.Location = new System.Drawing.Point(365, 281);
+			caparraLabel.Location = new System.Drawing.Point(329, 281);
 			caparraLabel.Name = "caparraLabel";
 			caparraLabel.Size = new System.Drawing.Size(91, 25);
 			caparraLabel.TabIndex = 9;
@@ -163,7 +163,7 @@
 			// costo_giornalieroLabel
 			// 
 			costo_giornalieroLabel.AutoSize = true;
-			costo_giornalieroLabel.Location = new System.Drawing.Point(617, 281);
+			costo_giornalieroLabel.Location = new System.Drawing.Point(610, 281);
 			costo_giornalieroLabel.Name = "costo_giornalieroLabel";
 			costo_giornalieroLabel.Size = new System.Drawing.Size(177, 25);
 			costo_giornalieroLabel.TabIndex = 18;
@@ -357,7 +357,7 @@
 			// 
 			this.caparraNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.prenotazioniBindingSource, "caparra", true));
 			this.caparraNumericUpDown.DecimalPlaces = 2;
-			this.caparraNumericUpDown.Location = new System.Drawing.Point(370, 323);
+			this.caparraNumericUpDown.Location = new System.Drawing.Point(334, 323);
 			this.caparraNumericUpDown.Name = "caparraNumericUpDown";
 			this.caparraNumericUpDown.Size = new System.Drawing.Size(204, 31);
 			this.caparraNumericUpDown.TabIndex = 6;
@@ -374,7 +374,7 @@
 			// giorni_permanenzaNumericUpDown
 			// 
 			this.giorni_permanenzaNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.prenotazioniBindingSource, "giorni_permanenza", true));
-			this.giorni_permanenzaNumericUpDown.Location = new System.Drawing.Point(897, 323);
+			this.giorni_permanenzaNumericUpDown.Location = new System.Drawing.Point(896, 323);
 			this.giorni_permanenzaNumericUpDown.Name = "giorni_permanenzaNumericUpDown";
 			this.giorni_permanenzaNumericUpDown.Size = new System.Drawing.Size(204, 31);
 			this.giorni_permanenzaNumericUpDown.TabIndex = 8;
@@ -397,7 +397,7 @@
 			// 
 			this.costo_giornalieroNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.prenotazioniBindingSource, "costo_giornaliero", true));
 			this.costo_giornalieroNumericUpDown.DecimalPlaces = 2;
-			this.costo_giornalieroNumericUpDown.Location = new System.Drawing.Point(622, 323);
+			this.costo_giornalieroNumericUpDown.Location = new System.Drawing.Point(615, 323);
 			this.costo_giornalieroNumericUpDown.Name = "costo_giornalieroNumericUpDown";
 			this.costo_giornalieroNumericUpDown.Size = new System.Drawing.Size(204, 31);
 			this.costo_giornalieroNumericUpDown.TabIndex = 7;
