@@ -29,36 +29,36 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClienti));
 			System.Windows.Forms.Label nomeLabel;
 			System.Windows.Forms.Label cognomeLabel;
 			System.Windows.Forms.Label dataNascitaLabel;
 			System.Windows.Forms.Label cittaLabel1;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClienti));
 			this.prenotazioniDataSet = new ReservationsManager.prenotazioniDataSet();
 			this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.clientiTableAdapter = new ReservationsManager.prenotazioniDataSetTableAdapters.clientiTableAdapter();
 			this.tableAdapterManager = new ReservationsManager.prenotazioniDataSetTableAdapters.TableAdapterManager();
+			this.cittaTableAdapter = new ReservationsManager.prenotazioniDataSetTableAdapters.cittaTableAdapter();
+			this.prenotazioniTableAdapter = new ReservationsManager.prenotazioniDataSetTableAdapters.prenotazioniTableAdapter();
 			this.clientiBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.clientiBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
 			this.nomeTextBox = new System.Windows.Forms.TextBox();
 			this.cognomeTextBox = new System.Windows.Forms.TextBox();
 			this.dataNascitaDateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this.cittaComboBox = new System.Windows.Forms.ComboBox();
 			this.cittaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.cittaTableAdapter = new ReservationsManager.prenotazioniDataSetTableAdapters.cittaTableAdapter();
 			this.prenotazioniBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.prenotazioniTableAdapter = new ReservationsManager.prenotazioniDataSetTableAdapters.prenotazioniTableAdapter();
 			this.prenotazioniDataGridView = new System.Windows.Forms.DataGridView();
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +68,7 @@
 			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnCitta = new System.Windows.Forms.Button();
 			nomeLabel = new System.Windows.Forms.Label();
 			cognomeLabel = new System.Windows.Forms.Label();
 			dataNascitaLabel = new System.Windows.Forms.Label();
@@ -80,6 +81,42 @@
 			((System.ComponentModel.ISupportInitialize)(this.prenotazioniBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.prenotazioniDataGridView)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// nomeLabel
+			// 
+			nomeLabel.AutoSize = true;
+			nomeLabel.Location = new System.Drawing.Point(60, 60);
+			nomeLabel.Name = "nomeLabel";
+			nomeLabel.Size = new System.Drawing.Size(71, 25);
+			nomeLabel.TabIndex = 1;
+			nomeLabel.Text = "nome:";
+			// 
+			// cognomeLabel
+			// 
+			cognomeLabel.AutoSize = true;
+			cognomeLabel.Location = new System.Drawing.Point(566, 60);
+			cognomeLabel.Name = "cognomeLabel";
+			cognomeLabel.Size = new System.Drawing.Size(106, 25);
+			cognomeLabel.TabIndex = 3;
+			cognomeLabel.Text = "cognome:";
+			// 
+			// dataNascitaLabel
+			// 
+			dataNascitaLabel.AutoSize = true;
+			dataNascitaLabel.Location = new System.Drawing.Point(60, 168);
+			dataNascitaLabel.Name = "dataNascitaLabel";
+			dataNascitaLabel.Size = new System.Drawing.Size(138, 25);
+			dataNascitaLabel.TabIndex = 5;
+			dataNascitaLabel.Text = "data Nascita:";
+			// 
+			// cittaLabel1
+			// 
+			cittaLabel1.AutoSize = true;
+			cittaLabel1.Location = new System.Drawing.Point(576, 153);
+			cittaLabel1.Name = "cittaLabel1";
+			cittaLabel1.Size = new System.Drawing.Size(58, 25);
+			cittaLabel1.TabIndex = 9;
+			cittaLabel1.Text = "citta:";
 			// 
 			// prenotazioniDataSet
 			// 
@@ -99,11 +136,18 @@
 			// 
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.cittaTableAdapter = this.cittaTableAdapter;
-			this.tableAdapterManager.clienti_backupTableAdapter = null;
 			this.tableAdapterManager.clientiTableAdapter = this.clientiTableAdapter;
 			this.tableAdapterManager.prenotazioniTableAdapter = this.prenotazioniTableAdapter;
 			this.tableAdapterManager.regioniTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = ReservationsManager.prenotazioniDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+			// 
+			// cittaTableAdapter
+			// 
+			this.cittaTableAdapter.ClearBeforeFill = true;
+			// 
+			// prenotazioniTableAdapter
+			// 
+			this.prenotazioniTableAdapter.ClearBeforeFill = true;
 			// 
 			// clientiBindingNavigator
 			// 
@@ -135,6 +179,31 @@
 			this.clientiBindingNavigator.Size = new System.Drawing.Size(1198, 42);
 			this.clientiBindingNavigator.TabIndex = 0;
 			this.clientiBindingNavigator.Text = "bindingNavigator1";
+			// 
+			// bindingNavigatorAddNewItem
+			// 
+			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(46, 36);
+			this.bindingNavigatorAddNewItem.Text = "Add new";
+			// 
+			// bindingNavigatorCountItem
+			// 
+			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(70, 36);
+			this.bindingNavigatorCountItem.Text = "of {0}";
+			this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+			// 
+			// bindingNavigatorDeleteItem
+			// 
+			this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+			this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(46, 36);
+			this.bindingNavigatorDeleteItem.Text = "Delete";
 			// 
 			// bindingNavigatorMoveFirstItem
 			// 
@@ -169,16 +238,9 @@
 			this.bindingNavigatorPositionItem.Text = "0";
 			this.bindingNavigatorPositionItem.ToolTipText = "Current position";
 			// 
-			// bindingNavigatorCountItem
-			// 
-			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(70, 36);
-			this.bindingNavigatorCountItem.Text = "of {0}";
-			this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-			// 
 			// bindingNavigatorSeparator1
 			// 
-			this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+			this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
 			this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 42);
 			// 
 			// bindingNavigatorMoveNextItem
@@ -201,26 +263,8 @@
 			// 
 			// bindingNavigatorSeparator2
 			// 
-			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
 			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 42);
-			// 
-			// bindingNavigatorAddNewItem
-			// 
-			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(46, 36);
-			this.bindingNavigatorAddNewItem.Text = "Add new";
-			// 
-			// bindingNavigatorDeleteItem
-			// 
-			this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-			this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(46, 36);
-			this.bindingNavigatorDeleteItem.Text = "Delete";
 			// 
 			// clientiBindingNavigatorSaveItem
 			// 
@@ -231,15 +275,6 @@
 			this.clientiBindingNavigatorSaveItem.Text = "Save Data";
 			this.clientiBindingNavigatorSaveItem.Click += new System.EventHandler(this.clientiBindingNavigatorSaveItem_Click);
 			// 
-			// nomeLabel
-			// 
-			nomeLabel.AutoSize = true;
-			nomeLabel.Location = new System.Drawing.Point(60, 60);
-			nomeLabel.Name = "nomeLabel";
-			nomeLabel.Size = new System.Drawing.Size(71, 25);
-			nomeLabel.TabIndex = 1;
-			nomeLabel.Text = "nome:";
-			// 
 			// nomeTextBox
 			// 
 			this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientiBindingSource, "nome", true));
@@ -247,15 +282,6 @@
 			this.nomeTextBox.Name = "nomeTextBox";
 			this.nomeTextBox.Size = new System.Drawing.Size(365, 31);
 			this.nomeTextBox.TabIndex = 0;
-			// 
-			// cognomeLabel
-			// 
-			cognomeLabel.AutoSize = true;
-			cognomeLabel.Location = new System.Drawing.Point(566, 60);
-			cognomeLabel.Name = "cognomeLabel";
-			cognomeLabel.Size = new System.Drawing.Size(106, 25);
-			cognomeLabel.TabIndex = 3;
-			cognomeLabel.Text = "cognome:";
 			// 
 			// cognomeTextBox
 			// 
@@ -265,15 +291,6 @@
 			this.cognomeTextBox.Size = new System.Drawing.Size(365, 31);
 			this.cognomeTextBox.TabIndex = 1;
 			// 
-			// dataNascitaLabel
-			// 
-			dataNascitaLabel.AutoSize = true;
-			dataNascitaLabel.Location = new System.Drawing.Point(60, 168);
-			dataNascitaLabel.Name = "dataNascitaLabel";
-			dataNascitaLabel.Size = new System.Drawing.Size(138, 25);
-			dataNascitaLabel.TabIndex = 5;
-			dataNascitaLabel.Text = "data Nascita:";
-			// 
 			// dataNascitaDateTimePicker
 			// 
 			this.dataNascitaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.clientiBindingSource, "dataNascita", true));
@@ -281,15 +298,6 @@
 			this.dataNascitaDateTimePicker.Name = "dataNascitaDateTimePicker";
 			this.dataNascitaDateTimePicker.Size = new System.Drawing.Size(371, 31);
 			this.dataNascitaDateTimePicker.TabIndex = 2;
-			// 
-			// cittaLabel1
-			// 
-			cittaLabel1.AutoSize = true;
-			cittaLabel1.Location = new System.Drawing.Point(576, 153);
-			cittaLabel1.Name = "cittaLabel1";
-			cittaLabel1.Size = new System.Drawing.Size(58, 25);
-			cittaLabel1.TabIndex = 9;
-			cittaLabel1.Text = "citta:";
 			// 
 			// cittaComboBox
 			// 
@@ -309,18 +317,10 @@
 			this.cittaBindingSource.DataMember = "citta";
 			this.cittaBindingSource.DataSource = this.prenotazioniDataSet;
 			// 
-			// cittaTableAdapter
-			// 
-			this.cittaTableAdapter.ClearBeforeFill = true;
-			// 
 			// prenotazioniBindingSource
 			// 
 			this.prenotazioniBindingSource.DataMember = "FK_prenotazioni_clienti";
 			this.prenotazioniBindingSource.DataSource = this.clientiBindingSource;
-			// 
-			// prenotazioniTableAdapter
-			// 
-			this.prenotazioniTableAdapter.ClearBeforeFill = true;
 			// 
 			// prenotazioniDataGridView
 			// 
@@ -352,6 +352,7 @@
 			this.dataGridViewTextBoxColumn3.HeaderText = "arrivo";
 			this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
 			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			this.dataGridViewTextBoxColumn3.Width = 200;
 			// 
 			// dataGridViewTextBoxColumn4
 			// 
@@ -359,6 +360,7 @@
 			this.dataGridViewTextBoxColumn4.HeaderText = "partenza";
 			this.dataGridViewTextBoxColumn4.MinimumWidth = 10;
 			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			this.dataGridViewTextBoxColumn4.Width = 200;
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
@@ -374,6 +376,7 @@
 			this.dataGridViewTextBoxColumn5.HeaderText = "importo";
 			this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
 			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+			this.dataGridViewTextBoxColumn5.Width = 200;
 			// 
 			// dataGridViewTextBoxColumn6
 			// 
@@ -381,6 +384,7 @@
 			this.dataGridViewTextBoxColumn6.HeaderText = "caparra";
 			this.dataGridViewTextBoxColumn6.MinimumWidth = 10;
 			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			this.dataGridViewTextBoxColumn6.Width = 200;
 			// 
 			// dataGridViewTextBoxColumn7
 			// 
@@ -406,11 +410,22 @@
 			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
 			this.dataGridViewTextBoxColumn9.Width = 200;
 			// 
+			// btnCitta
+			// 
+			this.btnCitta.Location = new System.Drawing.Point(963, 196);
+			this.btnCitta.Name = "btnCitta";
+			this.btnCitta.Size = new System.Drawing.Size(51, 41);
+			this.btnCitta.TabIndex = 10;
+			this.btnCitta.Text = "...";
+			this.btnCitta.UseVisualStyleBackColor = true;
+			this.btnCitta.Click += new System.EventHandler(this.btnCitta_Click);
+			// 
 			// frmClienti
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1198, 502);
+			this.Controls.Add(this.btnCitta);
 			this.Controls.Add(this.prenotazioniDataGridView);
 			this.Controls.Add(cittaLabel1);
 			this.Controls.Add(this.cittaComboBox);
@@ -473,6 +488,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+		private System.Windows.Forms.Button btnCitta;
 	}
 }
 
