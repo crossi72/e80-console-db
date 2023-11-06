@@ -58,6 +58,12 @@
     <Compile Include="frmClienti.Designer.cs">
       <DependentUpon>frmClienti.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrenotazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrenotazioni.Designer.cs">
+      <DependentUpon>frmPrenotazioni.cs</DependentUpon>
+    </Compile>
     <Compile Include="prenotazioniDataSet.cs">
       <DependentUpon>prenotazioniDataSet.xsd</DependentUpon>
     </Compile>
@@ -73,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClienti.resx">
       <DependentUpon>frmClienti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrenotazioni.resx">
+      <DependentUpon>frmPrenotazioni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

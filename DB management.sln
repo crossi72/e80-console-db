@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "classReservations", "classR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testReservation", "testReservation\testReservation.csproj", "{9A6DAE1C-FE1C-46A3-AD52-D3BAB1D698B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{F15CA72E-715A-4765-8566-913F456DB4DF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationsManager", "ReservationsManager\ReservationsManager.csproj", "{9F7B3A1B-B6E2-4B12-A917-1B1FA4E5ECD5}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{9A6DAE1C-FE1C-46A3-AD52-D3BAB1D698B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A6DAE1C-FE1C-46A3-AD52-D3BAB1D698B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A6DAE1C-FE1C-46A3-AD52-D3BAB1D698B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F15CA72E-715A-4765-8566-913F456DB4DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F15CA72E-715A-4765-8566-913F456DB4DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F15CA72E-715A-4765-8566-913F456DB4DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F15CA72E-715A-4765-8566-913F456DB4DF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F7B3A1B-B6E2-4B12-A917-1B1FA4E5ECD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F7B3A1B-B6E2-4B12-A917-1B1FA4E5ECD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F7B3A1B-B6E2-4B12-A917-1B1FA4E5ECD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
