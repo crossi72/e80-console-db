@@ -12,9 +12,29 @@ namespace ReservationsManager
 {
 	public partial class frmClienti : Form
 	{
+		private int id_cliente;
+
+		/// <summary>
+		/// Constructor used to show all customers
+		/// </summary>
 		public frmClienti()
 		{
+			this.Init(0);
+		}
+
+		/// <summary>
+		/// Constructor used to show only one customer
+		/// </summary>
+		/// <param name="customer">The ID of the customer</param>
+		public frmClienti(int customer)
+		{
+			this.Init(customer);
+		}
+
+		private void Init(int customer){
 			InitializeComponent();
+
+			this.id_cliente = customer;
 		}
 
 		private void clientiBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -34,6 +54,10 @@ namespace ReservationsManager
 			// TODO: This line of code loads data into the 'prenotazioniDataSet.clienti' table. You can move, or remove it, as needed.
 			this.clientiTableAdapter.Fill(this.prenotazioniDataSet.clienti);
 
+			if (this.id_cliente != 0){
+				//filter customers table
+				this.prenotazioniDataSet.Tables["clienti"].DefaultView.RowFilter = "ID_cliente = " + this.id_cliente;
+			}
 		}
 
 		private void btnCitta_Click(object sender, EventArgs e)
@@ -44,12 +68,6 @@ namespace ReservationsManager
 
 			//update customers data
 			this.cittaTableAdapter.Fill(this.prenotazioniDataSet.citta);
-			//int customerID;
-			DataRowView currentRow;
-
-			currentRow = (DataRowView)this.clientiBindingSource.Current;
-
-			this.prenotazioniDataSet.Tables["clienti"].DefaultView.RowFilter = " 1 = 2";
 		}
 	}
 }

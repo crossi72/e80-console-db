@@ -84,6 +84,7 @@
 			this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
 			this.clientiToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
 			this.clientiToolStripMenuItem.Text = "&Clienti";
+			this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
 			// 
 			// toolStripDropDownButton2
 			// 

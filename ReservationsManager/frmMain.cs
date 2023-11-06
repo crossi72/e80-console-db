@@ -12,6 +12,9 @@ namespace ReservationsManager
 {
 	public partial class frmMain : Form
 	{
+
+		#region  Menu Management 
+
 		public frmMain()
 		{
 			InitializeComponent();
@@ -30,5 +33,16 @@ namespace ReservationsManager
 		{
 			this.Close();
 		}
+
+		private void clientiToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			//create form
+			frmClienti form = new frmClienti();
+
+			//show form
+			form.ShowDialog();
+		}
+
+		#endregion
 	}
 }
